@@ -1,0 +1,124 @@
+﻿body {
+    margin :0px;
+}
+.screen {
+    z-index: -1;
+    top: 0px;
+    left: 0px;
+    width: 200vh;
+    height: 100vh;
+    background-image: url('assets/background/2-bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.content {
+    position: relative;
+    float: left;
+    width: calc(100% - 170px);
+    height: 100vh;
+}
+.animation {
+    position: relative;
+    width: 170px;
+   /* border: 1px solid #000000; */
+    height: 100vh;
+    margin-left: calc(100% - 170px);
+}
+   /* .animation .bear-place {
+        background-color: white;
+        z-index: 0;
+        background-size: 100%;
+        width: 340px;
+        min-height: 339px;
+        border-radius: 152px;
+        position: absolute;
+        margin-top: calc(100% + 440px);
+        box-shadow: 0px 2px 19px 0px rgba(0, 0, 0, 0.5), 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+    }*/
+   .animation .car-place{
+       width:119px;
+       height:119px;
+       float:right;
+   }
+    .animation .bear {
+        position: absolute;
+       margin-top: 524px;
+        width: 100%;
+        height: 230px;
+        background-image: url('assets/obj/bear.png');
+        background-repeat:no-repeat;
+    }
+.content .home {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    margin-top: 10px;
+    margin-left: 10px;
+    background-image: url('assets/button/home3.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.content .home:hover{
+    cursor:pointer;
+    opacity:0.8;
+}
+.content .space {
+    margin-top: 110px;
+    width: 100%;
+    height: 210px;
+}
+
+.content .box-number {
+    display: flex;
+    margin-left: 200px;
+    width: 1000px;
+    height: 200px;
+}
+
+.number {
+    width: 200px;
+    height: 200px;
+    padding-left: 20px;
+    padding-left: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto 200px;
+}
+
+    .number:hover {
+        cursor: pointer;
+        /* opacity: 0.7; */
+    }
+
+/* .first {
+    background-image: url('assets/number/1.png');
+}
+
+.second {
+    background-image: url('assets/number/2.png');
+}
+
+.third {
+    background-image: url('assets/number/3.png');
+}
+
+.fort {
+    background-image: url('assets/number/4.png');
+}
+
+.fifth {
+    background-image: url('assets/number/5.png');
+} */
+.summit-answer {
+    margin-left: calc(100% - 127px - 210px);
+    margin-top: 60px;
+    width: 135px;
+    height: 100px;
+    background-image: url('assets/button/submit.png');
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+.summit-answer:hover {
+        cursor: pointer;
+}
