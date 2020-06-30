@@ -27,6 +27,7 @@ function init() {
         numbers[i].css("background-image", "url(" + tempPath + ")")
     }
 }
+// move number and switch the position
 function handleEvent() {
     $('.box-number').sortable({
         axis: "x",
@@ -36,6 +37,7 @@ function handleEvent() {
 function draw() {
 
 }
+// check status of the number
 function checkAnswer() {
     for(let i=0; i< 5; i++){
         for(let j=0; j< 5; j++){
@@ -64,6 +66,7 @@ function handleClickOk(){
         if(level < MAX_LEVEL){
             level++
             radomArray()
+            showLevel()
             init()
         }
         else {
@@ -72,7 +75,11 @@ function handleClickOk(){
    
     }
 }
+function showLevel(){
+    document.getElementById("level").innerHTML = "Màn chơi:"+ (level +1) + "/" + (MAX_LEVEL+1);  
+}
 $('.summit-answer').on('click', handleClickOk)
 init()
 handleEvent()
 getPostion()
+showLevel()

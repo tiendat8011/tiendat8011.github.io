@@ -1,5 +1,6 @@
 ﻿body {
     margin :0px;
+    font-family:Arial;
 }
 .screen {
     z-index: -1;
@@ -43,7 +44,7 @@
    }
     .animation .bear {
         position: absolute;
-       margin-top: 524px;
+       margin-top: 500px;
         width: 100%;
         height: 230px;
         background-image: url('assets/obj/bear.png');
@@ -61,12 +62,28 @@
 }
 .content .home:hover{
     cursor:pointer;
-    opacity:0.8;
+    filter: drop-shadow(1px 1px 1px #333);
+    opacity: 0,8;
 }
 .content .space {
-    margin-top: 110px;
+    margin-top: 70px;
     width: 100%;
     height: 210px;
+    text-align:center;
+    padding:50px;
+}
+#topic{
+    font-size: 50px;
+    color: brown;
+    text-shadow: 1px 1px black;
+}
+#level{
+    margin: 0px !important; 
+    padding-left: 30px;
+    font-size: 20px;
+    color: white;
+    text-shadow: 1px 1px black;
+    text-align: left;
 }
 
 .content .box-number {
@@ -88,6 +105,7 @@
 
     .number:hover {
         cursor: pointer;
+
         /* opacity: 0.7; */
     }
 
@@ -121,4 +139,5 @@
 }
 .summit-answer:hover {
         cursor: pointer;
+        background-image: url('assets/button/submit_2.png');
 }
