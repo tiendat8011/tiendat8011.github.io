@@ -1,69 +1,58 @@
-
+body{
+    margin:0px;
+    font-family:"Comic Sans MS",serif;
+}
 .background {
     margin: 0px;
-    display: relative;
     z-index: -1;
     top: 0px;
     left: 0px;
-    width: 200vh;
+    width: 203vh;
     height: 100vh;
-    background-image: url('assets/background/index2_bg.jpg');
+    background-image: url('assets/background/kodi-room.png');
     background-repeat: no-repeat;
     background-size: cover;
 }
-#select_game {
-    margin-top: 180px;
-    display: flex;
-    align-content: center;
-}
-.start-button a{
-    font-size: 29px;
-    text-decoration: none;
-    background: #66c3e6;
-    color: white;
-    display: inline-block;
-    padding: 12px 20px 8px;
-    border-radius: 7px;
-    -webkit-transition: background-color 0.2s easy-in;
-    -moz-transition: background-color 0.2s easy-in;
-    transition: background-color 0.2s easy-in;
-}
 #space{
     width: 100%;
-    height: 400px;
+    height: 450px;
+    color:white;
+    font-style: italic;
+    user-select: none;
+    text-shadow:3px 3px 3px purple;
 }
-.start-button{
-    display: absolute;
+#text1{
     text-align: center;
+    font-size: 100px;
+    margin-bottom: 20px;
 }
-.start-button a:hover{
-    background-color: #50bae2;
+#text2{
+    margin-left: 700px;
+    font-size: 50px;
+}
+#start-btn{
+    margin-top: 49px;
+    margin-left: 666px;
+    width: 170px;
+    height:115px;
+    background-image: url('assets/button/start-btn1.png');
+    background-size: 150px auto;
+    background-repeat: no-repeat;
+}
+#start-btn:hover{
+    cursor: pointer;
+    background-size: 160px auto;
+}
+.kodi-and-friend{
+    z-index: 1;
+    position: absolute;
+    margin-top: 0px;
+    margin-left: 550px;
+    width: 700px;
+    height: 285px;
+    background-image: url(assets/obj/kodi-and-friend.png);
+    background-repeat: no-repeat;
+    background-size: 700px auto;
 }
 
-#compare_number {
-    padding: 5px;
-    margin-left: auto;
-    margin-right: 300px;
-    opacity: 0.7;
-}
 
-    #compare_number:hover {
-        transition: 1s;
-        opacity: 1;
-        transform: translateY(-50px);
-    }
-
-        #compare_number:hover a {
-            transition: 0,5s;
-            color: #111;
-        }
-
-img {
-    height: auto;
-    width: auto;
-}
-
-a {
-    text-decoration: none;
-    color: #666777;
-}

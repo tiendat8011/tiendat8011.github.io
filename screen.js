@@ -37,6 +37,7 @@ function handleEvent() {
 function draw() {
 
 }
+
 // check status of the number
 function checkAnswer() {
     for(let i=0; i< 5; i++){
@@ -61,9 +62,14 @@ function getPostion() {
 }
 const MAX_LEVEL = 2
 let level = 0
+let kodigif = $('.kodigif');
+let right=-1;
+let wrong=-1;
 function handleClickOk(){
     if(checkAnswer()){
         if(level < MAX_LEVEL){
+            right++;
+            kodigif.css("background-image", `url(assets/obj/right${right}.gif)`)
             level++
             radomArray()
             showLevel()
@@ -73,6 +79,10 @@ function handleClickOk(){
             window.location.href = 'index.html  '
         }
    
+    }
+    else{
+        if(wrong<1) { wrong++; } else{ wrong=0; }
+        kodigif.css("background-image", `url(assets/obj/wrong${wrong}.gif)`)
     }
 }
 function showLevel(){

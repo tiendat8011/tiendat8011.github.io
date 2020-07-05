@@ -22,7 +22,6 @@
 .animation {
     position: relative;
     width: 170px;
-   /* border: 1px solid #000000; */
     height: 100vh;
     margin-left: calc(100% - 170px);
 }
@@ -37,18 +36,44 @@
         margin-top: calc(100% + 440px);
         box-shadow: 0px 2px 19px 0px rgba(0, 0, 0, 0.5), 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
     }*/
-   .animation .car-place{
-       width:119px;
-       height:119px;
-       float:right;
-   }
-    .animation .bear {
+
+    .animation .kodi {
+        z-index: 1;
         position: absolute;
-       margin-top: 500px;
+        margin-top: 500px;
+        margin-left: 10px;
         width: 100%;
         height: 230px;
         background-image: url('assets/obj/bear.png');
         background-repeat:no-repeat;
+    }
+    .kodi-place{
+        z-index: 0;
+        margin-top: 550px;
+        margin-left: -38px;
+        width: 208px;
+        height: 180px;
+        background-image: url('assets/obj/kodi_place.png');
+        
+    } 
+    .kodi-hat{
+        z-index: 100;
+        position: absolute;
+        margin-top:-335px;
+        margin-left: 15px;
+        width: 150px;
+        height: 150px;
+        background-image: url('assets/obj/kodi_hat.png');
+        background-size: 150px 150px;
+    }
+    .kodigif{
+        position: absolute;
+        width: 155%;
+        height: 261px;
+        margin-top: 470px;
+        margin-left: -93px;
+        background-image: url(assets/obj/start0.gif);
+        background-size: 267px auto;
     }
 .content .home {
     position: absolute;
@@ -56,14 +81,14 @@
     height: 100px;
     margin-top: 10px;
     margin-left: 10px;
-    background-image: url('assets/button/home3.png');
+    background-image: url('assets/button/home4.png');
     background-repeat: no-repeat;
     background-size: cover;
 }
 .content .home:hover{
     cursor:pointer;
-    filter: drop-shadow(1px 1px 1px #333);
-    opacity: 0,8;
+    background-image: url('assets/button/home5.png');
+
 }
 .content .space {
     margin-top: 70px;
@@ -71,6 +96,7 @@
     height: 210px;
     text-align:center;
     padding:50px;
+    user-select: none;
 }
 #topic{
     font-size: 50px;
@@ -84,7 +110,9 @@
     color: white;
     text-shadow: 1px 1px black;
     text-align: left;
+    user-select: none;
 }
+
 
 .content .box-number {
     display: flex;
@@ -96,7 +124,6 @@
 .number {
     width: 200px;
     height: 200px;
-    padding-left: 20px;
     padding-left: 20px;
     background-repeat: no-repeat;
     background-position: center;
@@ -129,8 +156,8 @@
     background-image: url('assets/number/5.png');
 } */
 .summit-answer {
-    margin-left: calc(100% - 127px - 210px);
-    margin-top: 60px;
+    margin-left: calc(100% - 127px - 120px);
+    margin-top: 40px;
     width: 135px;
     height: 100px;
     background-image: url('assets/button/submit.png');
