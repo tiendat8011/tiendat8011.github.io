@@ -171,8 +171,9 @@
         background-image: url('assets/button/submit_2.png');
 }
 #bg-music-speaker{
-    margin-top: -70px;
-    width:90px;
-    height:90px;
+    margin-top: -40px;
+    width:70px;
+    height:70px;
     background-image: url('assets/button/music-on.png');
+    background-size: cover;
 }

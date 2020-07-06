@@ -14,9 +14,8 @@ numbers.push(number5)
 function SpeakNumber() {
     numbers.forEach((number, index)=>{
         number.on('click', ()=>{
-            // speakQues(arr[index])
             $('#ans-audio-src').attr("src", './music/'+arr[index]+'.mp3');
-            document.querySelector("#ans-audio").volume = 0.2;
+            document.querySelector("#ans-audio").volume = 0.5;
             document.querySelector("#ans-audio").load();
             document.querySelector("#ans-audio").play();
         })
@@ -64,15 +63,15 @@ function checkAnswer() {
     }
     return true
 }
-function getPostion() {
-    let i = 0
-    numbers.forEach(number => {
-        i++
-        let x = number.position();
-        console.log("Top: " + x.top + " Left: " + x.left + "---" + i);
-    })
-}
-const MAX_LEVEL = 2
+ function getPostion() {
+     let i = 0
+     numbers.forEach(number => {
+         i++
+         let x = number.position();
+         console.log("Top: " + x.top + " Left: " + x.left + "---" + i);
+     })
+ }
+const MAX_LEVEL = 3
 let level = 0
 let kodigif = $('.kodigif');
 let right = -1;
@@ -84,8 +83,10 @@ function handleClickOk() {
             right++;
             kodigif.css("background-image", `url(assets/obj/right${right}.gif)`)
             level++
-            showLevel()
-            init()
+            setTimeout(function(){
+                showLevel()
+                init()
+            },3000);
         }
         else {
             window.location.href = 'index.html'
@@ -100,19 +101,21 @@ function handleClickOk() {
 function showLevel() {
     document.getElementById("level").innerHTML = "Màn chơi:" + (level + 1) + "/" + (MAX_LEVEL + 1);
 }
-let data= "Sắp xếp dãy số theo thứ tự tăng dần"
+let topic= "Sắp xếp dãy số theo thứ tự tăng dần";
 $('.summit-answer').on('click', handleClickOk)
-$('.kodigif').on('click', speakQues(data))
+kodigif.on('click', speakQues(topic))
 init()
 handleEvent()
-// getPostion()
 showLevel()
+// speakQues(topic)
 
 //music
 /**
  * playsound(true||false)
  * @param {*} type 
  */
+// play sound when right or wrong
+
 function playSound(type) {
 
     if (type === true) {
@@ -129,22 +132,34 @@ function playSound(type) {
 var vid = document.getElementById("audio");
 vid.volume = 0.7;
 let backgroundSpeaker = document.querySelector("#bg-music-speaker");
+backgroundSpeaker2= $('#bg-music-speaker');
 let musicPause = false;
+function changeImage(){
+    if(!musicPause){ 
+        backgroundSpeaker2.css("background-image", `url('assets/button/music-off.png')`)
+    }
+    else {
+        backgroundSpeaker2.css("background-image", `url('assets/button/music-on.png')`)
+    }
+
+}
+backgroundSpeaker2.on('click', changeImage);
 //speak question
 /**
- * speakQues(data)
+ * 
  * @param {*} data is STRING
  */
 function speakQues(data) {
     debugger
     let text = encodeURIComponent(data);
-    let url ="https://code.responsivevoice.org/getvoice.php?text="+text+"&lang=vi&engine=g3&name=&pitch=0.5&rate=0.5&volume=1&key=WGciAW2s&gender=female"
-      document.querySelector("#speaker-src").src = url;
+    let url ="https://code.responsivevoice.org/getvoice.php?text="+text+"&lang=vi&engine=g3&name=&pitch=0.5&rate=0.5&volume=1&key=WGciAW2s&gender=female";
+    document.querySelector("#speaker-src").src = url;
     document.querySelector("#speaker").load();
     document.querySelector("#speaker").play();
-  }
-  // 
+}
+// play music while playing
 const backgroundMusic = document.querySelector("#audio");
+
 backgroundSpeaker.addEventListener("click", function () {
     debugger
     if (!musicPause) {
