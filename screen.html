@@ -6,6 +6,7 @@
     <link href="screen.css" rel="stylesheet" />
 </head>
 <body>
+
     <!-- Màn hình chính của trò chơi -->
     <div class="screen">
         <!-- Phần nội dung chính -->
@@ -30,8 +31,16 @@
                 <!--Số thứ năm-->
                 <div class="number fifth"></div>
             </div>
-            <!--Nút Summit-->
-            <div class="summit-answer"></div>
+            <div>  
+                <!--Nút Summit-->
+                <div class="summit-answer"></div>
+                <!-- Nút nhạc -->
+                <!-- <button id="bg-music-speaker"><span> Nhạc nền</span></button> -->
+                <div id="bg-music-speaker">
+                    
+                </div>
+            </div>
+     
         </div>
         <div class="animation">
             <!-- Hiển thị level -->
@@ -44,12 +53,20 @@
             <div class="kodi-hat"></div> -->
             <div class="kodigif"></div>
         </div>
-        <script src="jquery-3.5.1.min.js"></script>
-        <script src="jqueryUI.js"></script>
-        <script src="screen.js"></script>
+        <audio id="audio" style="display: none;" controls autoplay loop>
+            <source src="./music/letHerGo.mp3" type="audio/ogg" />
+          </audio>
+          <audio id="ans-audio" style="display: none;" controls autoplay>
+            <source id="ans-audio-src" src="" type="audio/mpeg" />
+          </audio>
+          <audio id='speaker' style="display: none;" controls autoplay>
+            <source id="speaker-src" src="" type="audio/mpeg" />
+          </audio>
        
     </div>
 
-
+    <script src="jquery-3.5.1.min.js"></script>
+    <script src="jqueryUI.js"></script>
+    <script src="screen.js"></script>
 </body>
 </html>

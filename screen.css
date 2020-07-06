@@ -75,6 +75,9 @@
         background-image: url(assets/obj/start0.gif);
         background-size: 267px auto;
     }
+    .kodigif:hover{
+        cursor: pointer;
+    }
 .content .home {
     position: absolute;
     width: 100px;
@@ -132,8 +135,6 @@
 
     .number:hover {
         cursor: pointer;
-
-        /* opacity: 0.7; */
     }
 
 /* .first {
@@ -156,6 +157,7 @@
     background-image: url('assets/number/5.png');
 } */
 .summit-answer {
+    display: flex;
     margin-left: calc(100% - 127px - 120px);
     margin-top: 40px;
     width: 135px;
@@ -167,4 +169,10 @@
 .summit-answer:hover {
         cursor: pointer;
         background-image: url('assets/button/submit_2.png');
+}
+#bg-music-speaker{
+    margin-top: -70px;
+    width:90px;
+    height:90px;
+    background-image: url('assets/button/music-on.png');
 }
