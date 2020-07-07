@@ -54,8 +54,7 @@ function checkAnswer() {
     for (let i = 0; i < 5; i++) {
         for (let j = 0; j < 5; j++) {
             if (!(i === j) && arr[i] < arr[j]) {
-                if (numbers
-                    [i].position().left > numbers[j].position().left) {
+                if (numbers[i].position().left > numbers[j].position().left) {
                     return false
                 }
             }
@@ -74,6 +73,7 @@ function checkAnswer() {
 const MAX_LEVEL = 3
 let level = 0
 let kodigif = $('.kodigif');
+let kodi= document.querySelector(".kodigif");
 let right = -1;
 let wrong = -1;
 function handleClickOk() {
@@ -103,10 +103,16 @@ function showLevel() {
 }
 let topic= "Sắp xếp dãy số theo thứ tự tăng dần";
 $('.summit-answer').on('click', handleClickOk)
-kodigif.on('click', speakQues(topic))
+ kodi.addEventListener("click", function(){
+     speakQues(topic);
+ });
+ 
 init()
 handleEvent()
 showLevel()
+setTimeout(function(){
+    speakQues(topic)
+},1000);
 // speakQues(topic)
 
 //music
@@ -161,13 +167,10 @@ function speakQues(data) {
 const backgroundMusic = document.querySelector("#audio");
 
 backgroundSpeaker.addEventListener("click", function () {
-    debugger
     if (!musicPause) {
         backgroundMusic.pause();
-        $('#bg-music-speaker').html('<i class="fas fa-music" aria-hidden="true"></i>');
         musicPause = true;
     } else {
-        $('#bg-music-speaker').html('<i class="fas fa-music" aria-hidden="true"></i>')
         backgroundMusic.play();
         musicPause = false;
     }
