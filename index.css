@@ -16,19 +16,20 @@ body{
 #space{
     width: 100%;
     height: 450px;
-    color:white;
+    color:greenyellow;
     font-style: italic;
     user-select: none;
     text-shadow:3px 3px 3px purple;
 }
 #text1{
-    text-align: center;
+    margin-left: 400px;
     font-size: 100px;
     margin-bottom: 20px;
 }
 #text2{
     margin-left: 700px;
     font-size: 50px;
+    margin-bottom: 90px;
 }
 #start-btn{
     margin-top: 49px;
@@ -54,5 +55,27 @@ body{
     background-repeat: no-repeat;
     background-size: 700px auto;
 }
-
+#play-again{
+    text-align: center;
+}
+#play-again a:hover{
+    color: red;
+}
+#play-again a{
+    font-size: 50px;
+    text-decoration: none;
+    /* background: #66c3e6; */
+    color:white;
+    display: inline-block;
+    /* padding: 12px 20px 8px;
+    border-radius: 7px; */
+}
+#library{
+    margin-top: -380px;
+    width: 100px;
+    height:100px;
+    background-image: url('assets/button/library.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 

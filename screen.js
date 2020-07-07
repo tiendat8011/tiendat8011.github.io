@@ -85,7 +85,7 @@ function handleClickOk() {
             },3000);
         }
         else {
-            window.location.href = 'index.html'
+            window.location.href = 'endGame.html'
         }
 
     }
@@ -129,7 +129,7 @@ function playSound(type) {
     else {
         $('#ans-audio-src').attr("src", './music/false.mp3');
     }
-    document.querySelector("#ans-audio").volume = 0.9;
+    document.querySelector("#ans-audio").volume = 0.3;
     document.querySelector("#ans-audio").load();
     document.querySelector("#ans-audio").play();
 }

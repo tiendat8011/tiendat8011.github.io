@@ -1,6 +1,6 @@
 ﻿body {
     margin :0px;
-    font-family:Arial;
+    font-family:"Comic Sans MS",serif;
 }
 .screen {
     z-index: -1;
@@ -70,7 +70,7 @@
         position: absolute;
         width: 155%;
         height: 261px;
-        margin-top: 470px;
+        margin-top: 453px;
         margin-left: -93px;
         /* background-size: 267px auto; */
     }
@@ -111,9 +111,10 @@
 }
 #level{
     margin: 0px !important; 
-    padding-left: 30px;
+    padding-top: 10px;
+    padding-left: 20px;
     font-size: 20px;
-    color: white;
+    color:blue;
     text-shadow: 1px 1px black;
     text-align: left;
     user-select: none;
