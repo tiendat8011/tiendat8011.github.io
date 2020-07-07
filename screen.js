@@ -72,16 +72,12 @@ function checkAnswer() {
  }
 const MAX_LEVEL = 3
 let level = 0
-let kodigif = $('.kodigif');
 let kodi= document.querySelector(".kodigif");
-let right = -1;
-let wrong = -1;
 function handleClickOk() {
     playSound(checkAnswer())
     if (checkAnswer()) {
         if (level < MAX_LEVEL) {
-            right++;
-            kodigif.css("background-image", `url(assets/obj/right${right}.gif)`)
+            document.getElementById("kodi").setAttribute("src", "assets/obj/right"+level+".gif");
             level++
             setTimeout(function(){
                 showLevel()
@@ -94,8 +90,7 @@ function handleClickOk() {
 
     }
     else {
-        if (wrong < 1) { wrong++; } else { wrong = 0; }
-        kodigif.css("background-image", `url(assets/obj/wrong${wrong}.gif)`)
+        document.getElementById("kodi").setAttribute("src", "assets/obj/wrong0.gif");
     }
 }
 function showLevel() {
@@ -104,7 +99,11 @@ function showLevel() {
 let topic= "Sắp xếp dãy số theo thứ tự tăng dần";
 $('.summit-answer').on('click', handleClickOk)
  kodi.addEventListener("click", function(){
-     speakQues(topic);
+    document.getElementById("kodi").setAttribute("src", "assets/obj/start0.gif");
+    setTimeout(function(){
+        speakQues(topic);
+    },500);
+
  });
  
 init()
@@ -140,23 +139,13 @@ vid.volume = 0.7;
 let backgroundSpeaker = document.querySelector("#bg-music-speaker");
 backgroundSpeaker2= $('#bg-music-speaker');
 let musicPause = false;
-function changeImage(){
-    if(!musicPause){ 
-        backgroundSpeaker2.css("background-image", `url('assets/button/music-off.png')`)
-    }
-    else {
-        backgroundSpeaker2.css("background-image", `url('assets/button/music-on.png')`)
-    }
 
-}
-backgroundSpeaker2.on('click', changeImage);
 //speak question
 /**
  * 
  * @param {*} data is STRING
  */
 function speakQues(data) {
-    debugger
     let text = encodeURIComponent(data);
     let url ="https://code.responsivevoice.org/getvoice.php?text="+text+"&lang=vi&engine=g3&name=&pitch=0.5&rate=0.5&volume=1&key=WGciAW2s&gender=female";
     document.querySelector("#speaker-src").src = url;
@@ -169,9 +158,11 @@ const backgroundMusic = document.querySelector("#audio");
 backgroundSpeaker.addEventListener("click", function () {
     if (!musicPause) {
         backgroundMusic.pause();
+        document.getElementById("music-icon").setAttribute("src", "assets/button/music-off.png");
         musicPause = true;
     } else {
         backgroundMusic.play();
+        document.getElementById("music-icon").setAttribute("src", "assets/button/music-on.png");
         musicPause = false;
     }
 });
